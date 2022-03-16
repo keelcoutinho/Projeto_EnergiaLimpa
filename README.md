@@ -9,6 +9,8 @@ Para a realização desse  projeto utilizamos:
 - Super Classe;
 - Duas Sub classes;
 - Uma classe main;
+- Laços condicionais;
+- loops de repetição;
 - Collections;
 - Correção de erros, com o try castch.
 
