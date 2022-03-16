@@ -8,6 +8,7 @@ Para a realização desse  projeto utilizamos:
 - Interface:
 - Super Classe;
 - Duas Sub classes;
+- Uma classe main;
 - Collections;
 - Correção de erros, com o try castch.
 
