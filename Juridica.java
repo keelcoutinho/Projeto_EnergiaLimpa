@@ -42,18 +42,21 @@ public class Juridica extends Cliente implements Interface{
 	@Override
 	public void imprimirInfo() 
 	{
+		System.out.print("\n\n--------------------------------------------------------------------------------");
 		System.out.printf("\n"
 				+ "\n DADOS DO CLIENTE: "
 				+ "\n\n Cliente: %s"
 				+ "\n Telefone: %s"
-				+ "\n Endereço: %s"
-				+ "\n Número de Instalação: %s"
+				+ "\n EndereÃ§o: %s"
+				+ "\n NÃºmero de InstalaÃ§Ã£o: %s"
 				+ "\n Valor da fatura: R$%2.2f"
 				+ "\n Peso mensal do lixo: %2.0fkg",
 				nome, telefone, endereco, numeroInstalacao, valorConta, kgLixo);
-
+		System.out.printf("\n\n RESULTADO: ");
+		System.out.printf("\n\n Valor de desconto ganho com a entrega do lixo foi de: R$%2.2f", pesoLixo(kgLixo));
+		System.out.printf("\n O novo valor da fatura de energia serÃ¡ de: R$%2.2f", reducaoValor());
+		System.out.print("\n\n--------------------------------------------------------------------------------\n");
 		
 	}
-	
 	
 }
