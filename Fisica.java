@@ -51,6 +51,7 @@ public class Fisica extends Cliente implements Interface{
 
 
 	@Override
+	@Override
 	public void imprimirInfo() 
 	{
 		System.out.print("\n\n--------------------------------------------------------------------------------");
@@ -66,7 +67,7 @@ public class Fisica extends Cliente implements Interface{
 		System.out.printf("\n\n RESULTADO: ");
 		System.out.printf("\n\n Valor de desconto ganho com a entrega do lixo foi de: R$%2.2f", pesoLixo(kgLixo));
 		System.out.printf("\n O novo valor da fatura de energia será de: R$%2.2f", reducaoValor());
-
+		System.out.print("\n\n--------------------------------------------------------------------------------\n");
 		
 	}
 	
@@ -85,9 +86,7 @@ public class Fisica extends Cliente implements Interface{
 		System.out.printf("\n\n RESULTADO: ");
 		System.out.printf("\n\n Valor de desconto ganho com a entrega do lixo foi de: R$%2.2f", pesoLixo(kgLixo));
 		System.out.printf("\n O novo valor da fatura de energia será de: R$%2.2f",reducaoValor2());
-		
+		System.out.print("\n\n--------------------------------------------------------------------------------\n");
 	}
 	
-	
-
 }
