@@ -1,4 +1,4 @@
-# Bem Vindos ao Projeto Energia Limpa
+# Bem Vindos ao Projeto Energia Limpa 
 
 Trata-se de um desafio proposto pela Digital House, tendo como base a solução de uma ODS da ONU.
 
@@ -11,9 +11,9 @@ Para a realização deste  projeto utilizamos:
 - Classe main;
 - Condicionais;
 - Switch case;
-- Laços de repetição;
+- Laços de repetição; 
 - Collections;
-- Correção de erros, com o try castch;
+- Correção de erros, com o try catch;
 - Diálogos com JOptionPane.
 
-### Obrigada pela Visita!
+### Obrigada pela Visita! :smile:
