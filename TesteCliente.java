@@ -7,15 +7,11 @@ import javax.swing.JOptionPane;
 public class TesteCliente {
 	
 	public static void main (String[] args) {	
-		
-		
-				 
-		
+	
 		Scanner scan = new Scanner(System.in);
 		
 		
 		int verifica = 0;
-		double novoValor = 0;
 		String cpf = null, cnpj = null;
 		int tipoPessoa;
 
@@ -24,10 +20,8 @@ public class TesteCliente {
 		{			
 			JOptionPane.showMessageDialog(null,
 					"\n Olá, Bem vindo ao programa: \n Energia, um Ciclo Responsável!");
-				try
-
-				{
-					
+				
+			
 					System.out.println("\n\n Informe o tipo de cliente: "
 									 + "\n 1 - Pessoa Física"
 									 + "\n 2 - Pessoa Jurídica");
@@ -42,6 +36,11 @@ public class TesteCliente {
 										 + "\n 2 - Pessoa Jurídica");
 						tipoPessoa = scan.nextInt();
 					}
+					
+					try
+
+					{
+						
 					if (tipoPessoa == 1)
 					{
 						System.out.println("\n Informe o CPF do cliente: ");
@@ -55,7 +54,10 @@ public class TesteCliente {
 								throw new Exception();
 							}
 						}
+						
 					}
+								
+					
 					else if (tipoPessoa == 2)
 					{
 						System.out.println("\n Informe o CNPJ do cliente: ");
@@ -75,12 +77,51 @@ public class TesteCliente {
 						System.err.println("\n Opção inválida!");
 						break;
 					}
-
 					
+					} catch(java.lang.Exception i) {
+						JOptionPane.showMessageDialog(null,"Exception: " +i
+								+"\nCampo preechindo incorretamente!!!"								
+								, cpf,JOptionPane.WARNING_MESSAGE);
+						
+						if (tipoPessoa == 1)
+						{							
+							for(int i1 = 0; i1 < cpf.length(); i1++)
+							{
+								Character num = cpf.charAt(i1);
+								if (Character.isLetter(num))
+								{
+									JOptionPane.showMessageDialog(null,"O 'CPF' deve conter apenas números!"
+											, null,JOptionPane.WARNING_MESSAGE);
+									System.out.println("\n Informe novamente o CPF do cliente: ");
+									cpf = scan.next();
+								}
+							}
+							
+						}
+						else if (tipoPessoa == 2)
+						{
+							for(int i1 = 0; i1 < cnpj.length(); i1++)
+							{
+								Character num = cnpj.charAt(i1);
+								if (Character.isLetter(num))
+								{
+									JOptionPane.showMessageDialog(null,"O 'CNPJ' deve conter apenas números!"
+											, null,JOptionPane.WARNING_MESSAGE);
+									System.out.println("\n Informe novamente o CNPJ do cliente: ");
+									cnpj = scan.next();
+								}
+							}
+						}
+						
+					}
+					
+										
 					System.out.println("\n Nome do cliente: ");
 					scan.nextLine();
 					String nome = scan.nextLine();
 				
+					try
+					{
 					for(int i = 0; i < nome.length(); i++)
 					{
 						Character letra = nome.charAt(i);
@@ -89,11 +130,34 @@ public class TesteCliente {
 							throw new Exception();
 						}
 					}
+					}
+					catch(java.lang.Exception e) 
+					{
+						JOptionPane.showMessageDialog(null,"Exception: " +e
+								+"\n Campo preechindo incorretamente!!!"
+								, null,JOptionPane.WARNING_MESSAGE);		
+						
+						for(int i = 0; i < nome.length(); i++)
+						{
+							char letra = nome.charAt(i);
+							if (Character.isDigit(letra))
+							
+							{
+								JOptionPane.showMessageDialog(null,"O 'nome' deve conter apenas letras!"
+										, null,JOptionPane.WARNING_MESSAGE);	
+								System.out.println("\n Informe novamente o nome do cliente: ");
+								nome = scan.nextLine();
+							}
+						}
+															
+					} 
 			
 					
 					System.out.println("\n Informe o número de telefone: ");
 					String telefone = scan.nextLine();
 				
+					try 
+					{
 					for(int i = 0; i < telefone.length(); i++)
 					{
 						Character num = telefone.charAt(i);
@@ -102,7 +166,23 @@ public class TesteCliente {
 							throw new Exception();
 						}
 					}
-					
+					} 
+					catch(java.lang.Exception t) {
+						JOptionPane.showMessageDialog(null,"Exception: " +t
+								+"\nCampo preechindo incorretamente!!!"								
+								, telefone,JOptionPane.WARNING_MESSAGE);
+						for(int i = 0; i < telefone.length(); i++)
+						{
+							Character num = telefone.charAt(i);
+							if (Character.isLetter(num))
+							{
+								JOptionPane.showMessageDialog(null,"O 'telefone' deve conter apenas números!"
+										, null,JOptionPane.WARNING_MESSAGE);
+								System.out.println("\n Informe o número de telefone: ");
+								telefone = scan.nextLine();
+							}
+						}
+					}
 					
 					System.out.println("\n Informe o endereço: ");
 					String endereco = scan.nextLine();
@@ -130,28 +210,7 @@ public class TesteCliente {
 					Juridica juridica = new Juridica (nome, telefone, endereco, 
 												numeroInstalacao, valorConta, kgLixo, cnpj, renda);
 					
-					
-					switch (tipoPessoa)
-					{
-					case 1:
-						if(renda <= 1212)
-						{
-							novoValor = fisica.reducaoValor() - (fisica.reducaoValor()*0.05);
-						}
-						else
-						{
-							novoValor = fisica.reducaoValor();
-						}
-						break;
-				
-					case 2:
-						novoValor = juridica.reducaoValor();
-						break;
-				
-					default:
-						System.out.print("\n Opção inválida!");
-					}
-					
+															
 					System.out.println("\nSelecione uma região para realizar a entrega do lixo: " + 
 							"\n 1 - Zona Sul"
 						  + "\n 2 - Zona Norte" 
@@ -244,63 +303,44 @@ public class TesteCliente {
 							System.err.println("\n Opção inválida!");
 						}
 						
-
-			
-					
-					if (tipoPessoa == 1)
-					{if(renda <=1212) {
-						System.out.print("\n\n--------------------------------------------------------------------------------");
-						fisica.imprimirInfo();
-						System.out.print("\n Cliente de baixa renda, elegível para Desconto Social de mais 5%.");
-						System.out.printf("\n\n RESULTADO: ");
-						System.out.printf("\n\n Valor de desconto ganho com a entrega do lixo foi de: R$%2.2f", fisica.pesoLixo(kgLixo));
-						System.out.printf("\n O novo valor da fatura de energia será de: R$%2.2f", novoValor);
 						
-					}else {
-						System.out.print("\n\n--------------------------------------------------------------------------------");
-						fisica.imprimirInfo();
-						System.out.printf("\n\n RESULTADO: ");
-						System.out.printf("\n\n Valor de desconto ganho com a entrega do lixo foi de: R$%2.2f", fisica.pesoLixo(kgLixo));
-						System.out.printf("\n O novo valor da fatura de energia será de: R$%2.2f", novoValor);
-					}}
-					
-					else if (tipoPessoa == 2)
+					switch(tipoPessoa) 
 					{
-						System.out.print("\n\n--------------------------------------------------------------------------------");
+					case 1:
+						if(renda <=1212) 
+						{
+						
+						fisica.imprimirInfo2();
+						
+						
+						}else {
+						
+						fisica.imprimirInfo();
+						
+						}
+						break;
+						
+					case 2:
 						juridica.imprimirInfo();
-						System.out.printf("\n\n RESULTADO: ");
-						System.out.printf("\n\n Valor de desconto ganho com a entrega do lixo foi de: R$%2.2f", juridica.pesoLixo(kgLixo));
-						System.out.printf("\n O novo valor da fatura de energia foi de: R$%2.2f", novoValor);
+						break;
+					
+					default:
+						System.out.println("Opção inválida");
+						
+					
 					}
-			
-						System.out.print("\n\n--------------------------------------------------------------------------------\n");
+													
 						System.out.println("\n Deseja inserir um novo cliente?"
 										 + "\n 1 - Sim"
 										 + "\n 2 - Não");
 						verifica = scan.nextInt();
-				}
-				
-				
-				catch (Exception e)
-				{
-					System.err.println("\n Exception: "+e
-									  +"\n"	
-							          +"\n Campo preechindo incorretamente!!!"
-									  +"\n Para o campo 'cpf' ou 'cnpj' é válido somente caracteres numéricos, por exemplo: 54321."
-									  +"\n Para o campo 'nome' é válido somente caracteres alfabéticos, por exemplo: Maria."
-									  +"\n Para o campo 'telefone' é válido somente caracteres numéricos, por exemplo: 12345.");
-
-
-
-				}
-			
-
+							
 		}
 		while(verifica !=2);
 		
 		JOptionPane.showMessageDialog(null,
 				"\n Obrigado por usar nosso programa!! \n Até a próxima!");
 		System.exit(0);
+				
 	}
-	
 }
