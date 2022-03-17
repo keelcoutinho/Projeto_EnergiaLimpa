@@ -7,11 +7,13 @@ Conseguimos ainda trabalhar com questões de igualdade, uma vez que abrange toda
 Para a realização deste  projeto utilizamos:
 - Interface;
 - Super Classe;
-- Duas Sub classes;
-- Uma classe main;
+- Subclasses;
+- Classe main;
 - Condicionais;
+- Switch case;
 - Laços de repetição;
 - Collections;
-- Correção de erros, com o try castch.
+- Correção de erros, com o try castch;
+- Diálogos com JOptionPane.
 
 ### Obrigada pela Visita!
