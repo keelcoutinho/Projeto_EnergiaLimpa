@@ -6,7 +6,10 @@ import javax.swing.JOptionPane;
 
 public class TesteCliente {
 	
-	public static void main (String[] args) {		
+	public static void main (String[] args) {	
+		
+		
+				 
 		
 		Scanner scan = new Scanner(System.in);
 		
@@ -19,23 +22,24 @@ public class TesteCliente {
 				
 		do
 		{			
-			System.out.print("\n\n Ol·, Bem vindo ao programa: Energia, um Ciclo Respons·vel! ");
+			JOptionPane.showMessageDialog(null,
+					"\n Ol√°, Bem vindo ao programa: \n Energia, um Ciclo Respons√°vel!");
 				try
 
 				{
 					
 					System.out.println("\n\n Informe o tipo de cliente: "
-									 + "\n 1 - Pessoa FÌsica"
-									 + "\n 2 - Pessoa JurÌdica");
+									 + "\n 1 - Pessoa F√≠sica"
+									 + "\n 2 - Pessoa Jur√≠dica");
 					tipoPessoa = scan.nextInt();
 
 					
 					while(tipoPessoa > 2)
 					{
-						System.err.println("\n OpÁ„o inv·lida!\n");
+						System.err.println("\n Op√ß√£o inv√°lida!\n");
 						System.out.println("\n Informe novamente o tipo de cliente: "
-										 + "\n 1 - Pessoa FÌsica"
-										 + "\n 2 - Pessoa JurÌdica");
+										 + "\n 1 - Pessoa F√≠sica"
+										 + "\n 2 - Pessoa Jur√≠dica");
 						tipoPessoa = scan.nextInt();
 					}
 					if (tipoPessoa == 1)
@@ -68,7 +72,7 @@ public class TesteCliente {
 					}
 					else
 					{
-						System.err.println("\n OpÁ„o inv·lida!");
+						System.err.println("\n Op√ß√£o inv√°lida!");
 						break;
 					}
 
@@ -87,7 +91,7 @@ public class TesteCliente {
 					}
 			
 					
-					System.out.println("\n Informe o n˙mero de telefone: ");
+					System.out.println("\n Informe o n√∫mero de telefone: ");
 					String telefone = scan.nextLine();
 				
 					for(int i = 0; i < telefone.length(); i++)
@@ -100,11 +104,11 @@ public class TesteCliente {
 					}
 					
 					
-					System.out.println("\n Informe o endereÁo: ");
+					System.out.println("\n Informe o endere√ßo: ");
 					String endereco = scan.nextLine();
 					
 					
-					System.out.println("\n Informe o n˙mero de InstalaÁ„o: ");
+					System.out.println("\n Informe o n√∫mero de Instala√ß√£o: ");
 					String numeroInstalacao = scan.nextLine();
 					
 					
@@ -116,7 +120,7 @@ public class TesteCliente {
 					float renda = scan.nextFloat();
 			
 					
-					System.out.println("\n Informe o peso do lixo Org‚nico: ");
+					System.out.println("\n Informe o peso do lixo Org√¢nico: ");
 					double kgLixo = scan.nextDouble();
 			
 					
@@ -145,10 +149,10 @@ public class TesteCliente {
 						break;
 				
 					default:
-						System.out.print("\n OpÁ„o inv·lida!");
+						System.out.print("\n Op√ß√£o inv√°lida!");
 					}
 					
-					System.out.println("\nSelecione uma regi„o para realizar a entrega do lixo: " + 
+					System.out.println("\nSelecione uma regi√£o para realizar a entrega do lixo: " + 
 							"\n 1 - Zona Sul"
 						  + "\n 2 - Zona Norte" 
 						  + "\n 3 - Zona Leste" 
@@ -158,8 +162,8 @@ public class TesteCliente {
 					
 					while(regiao > 4)
 					{
-						System.err.println("\n OpÁ„o inv·lida!");
-						System.out.println("\nSelecione novamente uma regi„o para realizar a entrega do lixo: " + 
+						System.err.println("\n Op√ß√£o inv√°lida!");
+						System.out.println("\nSelecione novamente uma regi√£o para realizar a entrega do lixo: " + 
 								"\n 1 - Zona Sul"
 							  + "\n 2 - Zona Norte" 
 							  + "\n 3 - Zona Leste" 
@@ -169,7 +173,7 @@ public class TesteCliente {
 			
 						
 						System.out.print("\n--------------------------------------------------------------------------------\n");
-						System.out.println("\n PONTOS DE COLETA NA SUA REGI√O: ");
+						System.out.println("\n PONTOS DE COLETA NA SUA REGI√ÉO: ");
 						
 						if(regiao == 4)
 						{
@@ -179,7 +183,7 @@ public class TesteCliente {
 							ZonaOeste.add("\n\n Rua Roberto Bosch, n. 242 ");
 							ZonaOeste.add("\n Rua Agrestina, n. 189");
 							ZonaOeste.add("\n Rua Sales Gomes, n. 415");
-							ZonaOeste.add("\n PraÁa. do Cancioneiro, n. 15");
+							ZonaOeste.add("\n Pra√ßa. do Cancioneiro, n. 15");
 				
 							for (String oeste : ZonaOeste)
 							{
@@ -194,7 +198,7 @@ public class TesteCliente {
 							ZonaLeste.add("\n Zona Leste: ");
 							ZonaLeste.add("\n\n Rua Manuel Alves da Rocha, n. 584");
 							ZonaLeste.add("\n Av. Osvaldo Valle Cordeiro, n. 420");
-							ZonaLeste.add("\n Rua Ac·cio Antunes, n. 89");
+							ZonaLeste.add("\n Rua Ac√°cio Antunes, n. 89");
 							ZonaLeste.add("\n Av. Aricanduva, n. 200");
 					
 							for (String leste : ZonaLeste)
@@ -208,7 +212,7 @@ public class TesteCliente {
 							List<String> ZonaNorte = new ArrayList<String>();
 						
 							ZonaNorte.add("\n Zona Norte: ");
-							ZonaNorte.add("\n\n Rua JosÈ Bernardo Pinto, n. 1480");
+							ZonaNorte.add("\n\n Rua Jos√© Bernardo Pinto, n. 1480");
 							ZonaNorte.add("\n Rua Eduardo Vicente Nasser, n. 519");
 							ZonaNorte.add("\n Avenida Paulo Lincoln do Valle Pontin, n. 550");
 							ZonaNorte.add("\n Rua Itaiquara, n. 237");
@@ -237,7 +241,7 @@ public class TesteCliente {
 						
 						if(regiao>4)
 						{
-							System.err.println("\n OpÁ„o inv·lida!");
+							System.err.println("\n Op√ß√£o inv√°lida!");
 						}
 						
 
@@ -247,17 +251,17 @@ public class TesteCliente {
 					{if(renda <=1212) {
 						System.out.print("\n\n--------------------------------------------------------------------------------");
 						fisica.imprimirInfo();
-						System.out.print("\n Cliente de baixa renda, elegÌvel para Desconto Social de mais 5%.");
+						System.out.print("\n Cliente de baixa renda, eleg√≠vel para Desconto Social de mais 5%.");
 						System.out.printf("\n\n RESULTADO: ");
 						System.out.printf("\n\n Valor de desconto ganho com a entrega do lixo foi de: R$%2.2f", fisica.pesoLixo(kgLixo));
-						System.out.printf("\n O novo valor da fatura de energia ser· de: R$%2.2f", novoValor);
+						System.out.printf("\n O novo valor da fatura de energia ser√° de: R$%2.2f", novoValor);
 						
 					}else {
 						System.out.print("\n\n--------------------------------------------------------------------------------");
 						fisica.imprimirInfo();
 						System.out.printf("\n\n RESULTADO: ");
 						System.out.printf("\n\n Valor de desconto ganho com a entrega do lixo foi de: R$%2.2f", fisica.pesoLixo(kgLixo));
-						System.out.printf("\n O novo valor da fatura de energia ser· de: R$%2.2f", novoValor);
+						System.out.printf("\n O novo valor da fatura de energia ser√° de: R$%2.2f", novoValor);
 					}}
 					
 					else if (tipoPessoa == 2)
@@ -272,7 +276,7 @@ public class TesteCliente {
 						System.out.print("\n\n--------------------------------------------------------------------------------\n");
 						System.out.println("\n Deseja inserir um novo cliente?"
 										 + "\n 1 - Sim"
-										 + "\n 2 - N„o");
+										 + "\n 2 - N√£o");
 						verifica = scan.nextInt();
 				}
 				
@@ -282,9 +286,9 @@ public class TesteCliente {
 					System.err.println("\n Exception: "+e
 									  +"\n"	
 							          +"\n Campo preechindo incorretamente!!!"
-									  +"\n Para o campo 'cpf' ou 'cnpj' È v·lido somente caracteres numÈricos, por exemplo: 54321."
-									  +"\n Para o campo 'nome' È v·lido somente caracteres alfabÈticos, por exemplo: Maria."
-									  +"\n Para o campo 'telefone' È v·lido somente caracteres numÈricos, por exemplo: 12345.");
+									  +"\n Para o campo 'cpf' ou 'cnpj' √© v√°lido somente caracteres num√©ricos, por exemplo: 54321."
+									  +"\n Para o campo 'nome' √© v√°lido somente caracteres alfab√©ticos, por exemplo: Maria."
+									  +"\n Para o campo 'telefone' √© v√°lido somente caracteres num√©ricos, por exemplo: 12345.");
 
 
 
@@ -294,8 +298,9 @@ public class TesteCliente {
 		}
 		while(verifica !=2);
 		
-		System.out.print("\n Obrigado por usar nosso sistema!\n\n AtÈ a prÛxima!");
-		
+		JOptionPane.showMessageDialog(null,
+				"\n Obrigado por usar nosso programa!! \n At√© a pr√≥xima!");
+		System.exit(0);
 	}
 	
-}//END
+}
