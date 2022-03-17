@@ -45,7 +45,8 @@ public class Juridica extends Cliente implements Interface{
 		System.out.print("\n\n--------------------------------------------------------------------------------");
 		System.out.printf("\n"
 				+ "\n DADOS DO CLIENTE: "
-				+ "\n\n Cliente: %s"
+				+ "\n\n Pessoa Jurídica"
+				+ "\n Cliente: %s"
 				+ "\n Telefone: %s"
 				+ "\n Endereço: %s"
 				+ "\n Número de Instalação: %s"
